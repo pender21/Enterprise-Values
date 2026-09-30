@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Mission, Vision &amp; Values Questionnaire · Sypnios (Prototype)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dark-green:#1e3a0f; --mid-green:#2d5a16; --accent:#8bb84a;
+  --pale:#f2f7ec; --cream:#faf8f3; --warm-white:#fefdf9; --dark:#1a1a18; --mid:#3d3d38;
+  --muted:#7a7a6e; --border:#dde8d0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--dark);font-family:'Jost',sans-serif;line-height:1.65}
+.proto-flag{background:#7a1f1f;color:#fff;text-align:center;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding:8px}
+.wrap{max-width:680px;margin:0 auto;padding:50px 24px 90px}
+.screen{display:none}.screen.active{display:block}
+.center{text-align:center}
+.kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.sec{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(26px,4vw,36px);color:var(--dark-green);margin:10px 0}
+.sec em{font-style:italic;color:var(--mid-green)}
+.rule{width:44px;height:1px;background:var(--accent);margin:14px auto 0;opacity:.7}
+.card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:24px 26px}
+.body{font-size:15px;color:var(--mid);line-height:1.75}
+.fld{display:block;width:100%;margin-bottom:14px}
+label.fld{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+input.fld{border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;font-size:15px;font-family:'Jost',sans-serif;background:#fff;width:100%}
+.q-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:6px}
+.q-text{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--dark);margin-bottom:12px;line-height:1.4}
+.how-to-answer{background:var(--pale);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:13px 16px;margin-bottom:18px}
+.how-to-answer .hta-label{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-green);font-weight:600;margin-bottom:4px}
+.how-to-answer .hta-text{font-size:13.5px;color:var(--mid);line-height:1.6}
+textarea.answer-input{width:100%;min-height:130px;border:1.5px solid var(--border);border-radius:8px;padding:15px;font-size:16px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--mid);resize:vertical;background:#fff}
+textarea.answer-input:focus{outline:none;border-color:var(--mid-green)}
+.optlist{display:grid;gap:10px;margin-top:6px}
+.opt{border:1.5px solid var(--border);background:#fff;border-radius:9px;padding:13px 16px;text-align:left;cursor:pointer;font-size:15px;color:var(--dark);width:100%}
+.opt.sel{border-color:var(--dark-green);background:var(--pale)}
+.ctrls{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.btn-primary{background:var(--dark-green);color:#fff;border:none;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:14px 30px;border-radius:8px;cursor:pointer}
+.btn-primary:disabled{background:#cfcabb;cursor:not-allowed}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:13px 22px;border-radius:8px;cursor:pointer}
+.review-row{border-bottom:1px solid var(--border);padding:14px 0}
+.review-q{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.review-a{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--dark);font-size:16px}
+.notice{font-size:13px;color:var(--mid);background:var(--pale);border-radius:8px;padding:14px 18px;margin-top:18px}
+.setup-note{font-size:12px;color:#a33;background:#fbeaea;border:1px solid #e5c1c1;border-radius:8px;padding:10px 14px;margin-bottom:20px}
+</style>
+</head>
+<body>
+<div class="proto-flag">DISCONNECTED PROTOTYPE — NO ENDPOINTS CONFIGURED — SEE SETUP INSTRUCTIONS BELOW BEFORE USE</div>
+<div class="wrap">
+
+<section id="s-intake" class="screen active">
+  <div class="center"><div class="kicker">Executive Perspective</div>
+    <h2 class="sec">Mission, Vision &amp; <em>Values</em></h2><div class="rule"></div></div>
+  <div class="card" style="margin-top:22px">
+    <label class="fld">First name</label><input class="fld" id="f-fname">
+    <label class="fld">Last name</label><input class="fld" id="f-lname">
+    <label class="fld">Email</label><input class="fld" id="f-email" type="email">
+    <label class="fld">Your role</label><input class="fld" id="f-role">
+    <label class="fld">Organization</label><input class="fld" id="f-org">
+    <label class="fld">Engagement identifier <span style="font-weight:400;text-transform:none;font-size:11px">(provided by your Sypnios advisor, links your response to the right CEO Portrait)</span></label><input class="fld" id="f-engagement">
+  </div>
+  <div class="notice">Your answers are reviewed by your CEO and the Sypnios team assigned to this engagement. If a team discussion is scheduled, shared understandings and differences may be discussed as a group; individual responses are not read aloud or attributed by name in that setting. This is not an anonymous questionnaire, your name is attached to your answers for the advisor's use.</div>
+  <div class="center" style="margin-top:20px"><button class="btn-primary" onclick="go('s-assess')">Begin &nbsp;→</button></div>
+</section>
+
+<section id="s-assess" class="screen">
+  <div id="q-body" class="card"></div>
+</section>
+
+<section id="s-review" class="screen">
+  <div class="center"><div class="kicker">Before You Submit</div><h2 class="sec">Review Your <em>Answers</em></h2><div class="rule"></div></div>
+  <div class="card" style="margin-top:20px" id="review-body"></div>
+  <div class="ctrls center" style="justify-content:center">
+    <button class="btn-ghost" onclick="go('s-assess'); idx=STEPS.length-1; render();">← Back to Edit</button>
+    <button class="btn-primary" id="submit-btn" onclick="submitQuestionnaire()">Submit</button>
+  </div>
+  <div id="submit-status" class="body" style="text-align:center;margin-top:14px"></div>
+</section>
+
+<section id="s-done" class="screen">
+  <div class="center"><div class="kicker">Received</div><h2 class="sec">Thank <em>You</em></h2><div class="rule"></div></div>
+  <div class="card body" style="margin-top:20px">Your responses have been recorded for this engagement. Your CEO and the assigned Sypnios team will review them alongside the Enterprise Portrait. Thank you for your time.</div>
+</section>
+
+<div class="wrap" style="padding-top:0">
+<div class="card" style="margin-top:10px">
+<div class="q-label" style="color:#a33">Setup Required Before Use</div>
+<div class="body" style="font-size:13.5px">
+This file ships disconnected. Configuration placeholders only, no production destination, no privileged keys, nothing here has been tested against a live endpoint.
+<br><br><b>Supabase table (run once):</b>
+<pre style="background:var(--pale);padding:12px;border-radius:8px;font-size:11.5px;overflow:auto">create table executive_mvv_responses (
+  id uuid primary key default gen_random_uuid(),
+  submission_id text unique not null,
+  engagement_id text not null,
+  fname text, lname text, email text, role text, org text,
+  answers jsonb not null,
+  formal_statements_check text,
+  status text not null default 'draft',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+alter table executive_mvv_responses enable row level security;
+-- Access policy: writes via the public anon key, insert-only, no select/update
+-- from the client. Configure a policy such as:
+create policy "insert own submission" on executive_mvv_responses
+  for insert with check (true);
+-- Do NOT expose a service-role key in this file. Reads should happen only
+-- from a Sypnios-side admin context, never this client page.</pre>
+<b>Connection checklist:</b> (1) create a dedicated Supabase project or table, separate from Leadership Portrait and Enterprise intake tables; (2) create a dedicated Formspree form for this questionnaire; (3) replace the two placeholders below with the real values; (4) test a single submission end to end before sending to any real executive; (5) confirm the submission lands with status <code>complete</code> exactly once, not duplicated, on a repeated click.
+</div>
+</div>
+</div>
+
+<script>
+// =================================================================
+// Configuration — PLACEHOLDERS ONLY. Do not paste production values.
+// =================================================================
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_WITH_DEDICATED_FORM_ID';
+const SUPABASE_URL = 'https://REPLACE_WITH_PROJECT.supabase.co';
+const SUPABASE_ANON_KEY = 'REPLACE_WITH_PUBLIC_ANON_KEY'; // public/anon key only, never a service-role key
+const ENDPOINTS_CONFIGURED = false; // flip to true only after real values are set and tested
+
+// =================================================================
+// Questions — wording and IDs extracted verbatim from V4's five
+// comparison items and the documented-statements check. Not paraphrased.
+// =================================================================
+const STEPS = [
+  { id:'purpose', type:'text',
+    text:"In plain terms, why does this business exist today, and who does it actually serve?",
+    guidance:"Answer from your own understanding, without looking up a company statement. \u201cWe haven\u2019t defined this\u201d and \u201cI\u2019m not sure\u201d are useful, welcome answers. We're after an honest picture of the enterprise today, not a perfect recitation." },
+  { id:'destination', type:'text',
+    text:"As you understand it right now, where is this business headed over the next three years?",
+    guidance:"This is the destination as you see it today, not the plan for getting there, that's later work." },
+  { id:'priorities', type:'text',
+    text:"Right now, what are the two or three things that matter most for this business?" },
+  { id:'behavior', type:'text',
+    text:"What's one leadership behavior that should never be compromised here, no matter what? Tell me about a real moment when that behavior was tested." },
+  { id:'decision', type:'text',
+    text:"Think of one significant decision you've made recently. Walk me through how it actually got made, what you were weighing, and if two priorities were pulling in different directions, which one won, and why?" },
+  { id:'formal_statements_check', type:'check',
+    text:"To your knowledge, does this business have formal, written mission, vision, or values statements?",
+    options:['Yes','No','Not sure'],
+    guidance:"If yes, we'll collect the actual document once, from wherever it lives in your organization, not from every person who answers this questionnaire." },
+];
+
+let idx = 0;
+const answers = {};
+let submissionId = null;
+let submitting = false, alreadySucceeded = false;
+
+function go(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo(0,0); if(id==='s-assess') render(); if(id==='s-review') renderReview(); }
+
+function guidanceBlock(step){ return step.guidance ? `<div class="how-to-answer"><div class="hta-label">How to answer</div><div class="hta-text">${step.guidance}</div></div>` : ''; }
+
+function render(){
+  const step = STEPS[idx];
+  const body = document.getElementById('q-body');
+  if(step.type === 'text'){
+    const existing = answers[step.id] || '';
+    body.innerHTML = `
+      <div class="q-label">Question ${idx+1} of ${STEPS.length}</div>
+      <div class="q-text">${step.text}</div>
+      ${guidanceBlock(step)}
+      <textarea class="answer-input" id="ans-input" placeholder="Type your answer here.">${existing}</textarea>
+      <div class="ctrls">
+        ${idx>0?'<button class="btn-ghost" onclick="prev()">\u2190 Back</button>':''}
+        <button class="btn-primary" id="next-btn" onclick="next()" ${existing.trim()?'':'disabled'}>${idx===STEPS.length-1?'Review \u2192':'Next \u2192'}</button>
+      </div>`;
+    document.getElementById('ans-input').addEventListener('input', e=>{
+      answers[step.id] = e.target.value;
+      document.getElementById('next-btn').disabled = !e.target.value.trim();
+    });
+  } else {
+    const current = answers[step.id];
+    body.innerHTML = `
+      <div class="q-label">Question ${idx+1} of ${STEPS.length}</div>
+      <div class="q-text">${step.text}</div>
+      ${guidanceBlock(step)}
+      <div class="optlist">${step.options.map(o=>`<button class="opt ${current===o?'sel':''}" onclick="pick('${o}')">${o}</button>`).join('')}</div>
+      <div class="ctrls">
+        ${idx>0?'<button class="btn-ghost" onclick="prev()">\u2190 Back</button>':''}
+        <button class="btn-primary" id="next-btn" onclick="next()" ${current?'':'disabled'}>Review \u2192</button>
+      </div>`;
+  }
+}
+function pick(v){ answers[STEPS[idx].id] = v; render(); }
+function prev(){ if(idx>0){ idx--; render(); } }
+function next(){ if(idx>=STEPS.length-1){ go('s-review'); return; } idx++; render(); }
+
+function renderReview(){
+  const body = document.getElementById('review-body');
+  body.innerHTML = STEPS.map(s=>`
+    <div class="review-row">
+      <div class="review-q">${s.text}</div>
+      <div class="review-a">${answers[s.id] || '(not answered)'}</div>
+    </div>`).join('') + `
+    <div class="review-row" style="border-bottom:none">
+      <div class="review-q">Submitted by</div>
+      <div class="review-a">${[val('f-fname'),val('f-lname')].filter(Boolean).join(' ')||'(name not entered)'} · ${val('f-email')||'(email not entered)'} · Engagement ${val('f-engagement')||'(not entered)'}</div>
+    </div>`;
+}
+function val(id){ const e=document.getElementById(id); return e?e.value:''; }
+
+// Stable ID generated once per attempt, sent with every retry so a repeated
+// click after a slow or ambiguous response upserts the same row instead of
+// creating a duplicate at the destination.
+function getSubmissionId(){
+  if(!submissionId){
+    submissionId = 'exec-' + Date.now() + '-' + Math.random().toString(36).slice(2,10);
+  }
+  return submissionId;
+}
+
+async function submitQuestionnaire(){
+  if(submitting || alreadySucceeded) return; // duplicate-click guard
+  submitting = true;
+  const btn = document.getElementById('submit-btn');
+  const status = document.getElementById('submit-status');
+  btn.disabled = true;
+  status.textContent = 'Submitting...';
+
+  if(!ENDPOINTS_CONFIGURED){
+    status.textContent = 'This prototype is disconnected: no Formspree or Supabase endpoint has been configured, so nothing was actually sent. Fill in the placeholders and set ENDPOINTS_CONFIGURED to true before real use.';
+    submitting = false;
+    btn.disabled = false;
+    return;
+  }
+
+  const payload = {
+    submission_id: getSubmissionId(),
+    engagement_id: val('f-engagement'),
+    fname: val('f-fname'), lname: val('f-lname'), email: val('f-email'),
+    role: val('f-role'), org: val('f-org'),
+    answers: {
+      purpose: answers.purpose, destination: answers.destination, priorities: answers.priorities,
+      behavior: answers.behavior, decision: answers.decision
+    },
+    formal_statements_check: answers.formal_statements_check,
+    status: 'complete'
+  };
+
+  let supabaseOk = false, formspreeOk = false;
+  try{
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/executive_mvv_responses`, {
+      method:'POST',
+      headers:{ 'apikey':SUPABASE_ANON_KEY, 'Authorization':`Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type':'application/json', 'Prefer':'resolution=merge-duplicates' },
+      body: JSON.stringify(payload)
+    });
+    supabaseOk = res.ok;
+  }catch(e){ console.error('Supabase submission error:', e); }
+
+  try{
+    const res2 = await fetch(FORMSPREE_ENDPOINT, {
+      method:'POST', headers:{ 'Accept':'application/json','Content-Type':'application/json' },
+      body: JSON.stringify({ _subject:`Executive MVV Questionnaire: ${payload.org}`, ...payload })
+    });
+    formspreeOk = res2.ok;
+  }catch(e){ console.error('Formspree submission error:', e); }
+
+  submitting = false;
+  if(supabaseOk || formspreeOk){
+    alreadySucceeded = true; // a retry after partial success must not resend to the destination that already worked
+    go('s-done');
+  } else {
+    btn.disabled = false;
+    status.textContent = 'Submission did not go through. Please check your connection and try again.';
+  }
+}
+</script>
+</body>
+</html>
